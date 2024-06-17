@@ -1,57 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Rating } from './components/Rating/Rating';
+import Accardion from './components/Accardion/Accardion';
 
 function App() {
   return (
     <div className="App">
-      <h2>This is APP component</h2>
-      <Rating/>
-      <Accardion/>
+      <TitleApp title={"Article №1"}/>
+      <Rating value={3}/>
+      <Accardion title={"--MENU-- #1"}/>
+      <Accardion title={"--MENU-- #2"}/>
+      <TitleApp title={"Article №2"}/>
+      <Rating value={1}/>
     </div>
   );
 }
 
-function Rating() {
+const TitleApp = (props: any) => {
   return (
-    <div>
-      <Star/>
-      <Star/>
-      <Star/>
-      <Star/>
-      <Star/>
-    </div>
-  )
-}
-
-function Star() {
-  return (
-    <span>Star </span>
-  )
-}
-
-function Accardion() {
-  return (
-    <div>
-      <AccardionTitle/>
-      <AccardionBody/>
-    </div>
-  )
-}
-
-function AccardionTitle() {
-  return (
-    <h3>--MENU--</h3>
-  )
-}
-
-function AccardionBody() {
-  return (
-    <ul>
-      <li>item 1</li>
-      <li>item 2</li>
-      <li>item 3</li>
-    </ul>
+    <h2>{props.title}</h2>
   )
 }
 
