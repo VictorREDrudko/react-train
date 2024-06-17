@@ -1,13 +1,25 @@
-function Accardion(props: any) {
+type Accardionprops = {
+  titleValue: string
+  collapsed: boolean
+}
+
+function Accardion(props: Accardionprops) {
   return (
+    props.collapsed ? <AccardionTitle title={props.titleValue}/> : 
     <div>
-      <AccardionTitle title={props.title}/>
+      <AccardionTitle title={props.titleValue}/>
       <AccardionBody/>
     </div>
   )
 }
 
-function AccardionTitle(props: any) {
+
+
+type AccardionTitleProps = {
+  title: string
+}
+
+function AccardionTitle(props: AccardionTitleProps) {
   return (
     <h3>{props.title}</h3>
   )

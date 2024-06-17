@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Rating } from './components/Rating/Rating';
 import Accardion from './components/Accardion/Accardion';
@@ -7,17 +5,21 @@ import Accardion from './components/Accardion/Accardion';
 function App() {
   return (
     <div className="App">
-      <TitleApp title={"Article №1"}/>
+      <TitlePage title={"Article №1"}/>
       <Rating value={3}/>
-      <Accardion title={"--MENU-- #1"}/>
-      <Accardion title={"--MENU-- #2"}/>
-      <TitleApp title={"Article №2"}/>
+      <Accardion titleValue={"--MENU-- #1"} collapsed={true}/>
+      <Accardion titleValue={"--MENU-- #2"} collapsed={false}/>
+      <TitlePage title={"Article №2"}/>
       <Rating value={1}/>
     </div>
   );
 }
 
-const TitleApp = (props: any) => {
+type TitlePageProps = {
+  title: string
+}
+
+const TitlePage = (props: TitlePageProps) => {
   return (
     <h2>{props.title}</h2>
   )

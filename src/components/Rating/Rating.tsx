@@ -1,4 +1,8 @@
-export function Rating(props: any) {
+type RatingProps = {
+  value: 0 | 1 | 2 | 3 | 4 | 5
+}
+
+export function Rating(props: RatingProps) {
   if(props.value === 1) {
     return (
       <div>
@@ -70,7 +74,14 @@ export function Rating(props: any) {
   )
 }
 
-function Star(props: any) {
+
+
+
+type StarProps = {
+  selected: boolean
+}
+
+function Star(props: StarProps) {
   return (
     props.selected ? <span><b>Star </b></span> : <span>Star </span>
   )
