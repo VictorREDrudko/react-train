@@ -33,13 +33,25 @@ function Star() {
 function Accardion() {
   return (
     <div>
-      <h3>--MENU--</h3>
-      <ul>
-        <li>item 1</li>
-        <li>item 1</li>
-        <li>item 1</li>
-      </ul>
+      <AccardionTitle/>
+      <AccardionBody/>
     </div>
+  )
+}
+
+function AccardionTitle() {
+  return (
+    <h3>--MENU--</h3>
+  )
+}
+
+function AccardionBody() {
+  return (
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
   )
 }
 
