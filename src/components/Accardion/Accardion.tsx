@@ -5,10 +5,9 @@ type Accardionprops = {
 
 function Accardion(props: Accardionprops) {
   return (
-    props.collapsed ? <AccardionTitle title={props.titleValue}/> : 
     <div>
       <AccardionTitle title={props.titleValue}/>
-      <AccardionBody/>
+      {!props.collapsed && <AccardionBody/>}
     </div>
   )
 }
