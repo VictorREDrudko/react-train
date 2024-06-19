@@ -2,6 +2,9 @@ import './App.css';
 import { Rating } from './components/Rating/Rating';
 import Accardion from './components/Accardion/Accardion';
 import { Switch } from './components/Switch/Switch';
+import { UncontrolSwitch } from './components/UncontrolSwitch/UncontrolSwitch';
+import { UnControlAcc } from './components/UncontrolAcc/UncontrolAcc';
+import { UncontrolRating } from './components/UncontrolRating/UncontrolRating';
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
       <Rating value={5}/>
       <Switch switching={true}/>
       <Switch switching={false}/>
+      <UncontrolSwitch/>
+      <UnControlAcc titleValue={"--UNCONTROLMENU-- #3"}/>
+      <UncontrolRating/>
     </div>
   );
 }

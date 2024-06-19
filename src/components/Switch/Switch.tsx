@@ -7,18 +7,9 @@ type SwitchProps = {
 export const Switch = (props: SwitchProps) => {
   return (
     <div className={s.wrapper}>
-      {props.switching ?
-      <>
-        <div className={s.isOn}>On</div>
-        <div className={s.selector}>Off</div>
-        <div className={s.circleOn}></div>
-      </> : 
-      <>
-        <div className={s.selector}>On</div>
-        <div className={s.isOff}>Off</div>
-        <div className={s.circleOff}></div>
-      </>}
-
+        <div className={`${s.selector} ${props.switching ? s.isOn : ''}`}>On</div>
+        <div className={`${s.selector} ${props.switching ? '' : s.isOff}`}>Off</div>
+        <div className={props.switching ? `${s.circle} ${s.circleOn}` : `${s.circle} ${s.circleOf}`}></div>
     </div>
   )
 }

@@ -4,21 +4,21 @@
   margin-top: 20px;
 }
 
-.circleOff {
+.circle {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #fff;
   border: 1px solid black;
+}
+
+.circleOff {
+  background-color: #fff;
 }
 
 .circleOn {
   background-color: yellow;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid black;
 }
+
 
 .selector {
   width: 30px;
@@ -29,16 +29,8 @@
 
 .isOn {
   background-color: green;
-  width: 30px;
-  height: 20px;
-  border: 1px solid black;
-  cursor: pointer;
 }
 
 .isOff {
   background-color: red;
-  width: 30px;
-  height: 20px;
-  border: 1px solid black;
-  cursor: pointer;
 }

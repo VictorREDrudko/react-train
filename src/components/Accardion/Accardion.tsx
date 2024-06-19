@@ -12,8 +12,6 @@ function Accardion(props: Accardionprops) {
   )
 }
 
-
-
 type AccardionTitleProps = {
   title: string
 }
