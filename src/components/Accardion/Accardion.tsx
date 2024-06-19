@@ -1,12 +1,13 @@
 type Accardionprops = {
   titleValue: string
   collapsed: boolean
+  setIsCollapsed: ()=>void
 }
 
 function Accardion(props: Accardionprops) {
   return (
     <div>
-      <AccardionTitle title={props.titleValue}/>
+      <AccardionTitle title={props.titleValue} onClick={props.setIsCollapsed}/>
       {!props.collapsed && <AccardionBody/>}
     </div>
   )
@@ -14,11 +15,12 @@ function Accardion(props: Accardionprops) {
 
 type AccardionTitleProps = {
   title: string
+  onClick: ()=>void
 }
 
 function AccardionTitle(props: AccardionTitleProps) {
   return (
-    <h3>{props.title}</h3>
+    <h3 onClick={props.onClick}>{props.title}</h3>
   )
 }
 
