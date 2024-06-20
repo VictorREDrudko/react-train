@@ -6,11 +6,17 @@ type SwitchProps = {
 }
 
 export const Switch = (props: SwitchProps) => {
+  const onClickHandlerOn = ()=>props.setOn(true);
+  const onClickHandlerOff = ()=>props.setOn(false);
+  const styleOn = `${s.selector} ${props.switching ? s.isOn : ''}`;
+  const styleOff = `${s.selector} ${props.switching ? '' : s.isOff}`;
+  const styleCircle = props.switching ? `${s.circle} ${s.circleOn}` : `${s.circle} ${s.circleOf}`;
+
   return (
     <div className={s.wrapper}>
-        <div className={`${s.selector} ${props.switching ? s.isOn : ''}`} onClick={()=>props.setOn(true)}>On</div>
-        <div className={`${s.selector} ${props.switching ? '' : s.isOff}`} onClick={()=>props.setOn(false)}>Off</div>
-        <div className={props.switching ? `${s.circle} ${s.circleOn}` : `${s.circle} ${s.circleOf}`}></div>
+        <div className={styleOn} onClick={onClickHandlerOn}>On</div>
+        <div className={styleOff} onClick={onClickHandlerOff}>Off</div>
+        <div className={styleCircle}></div>
     </div>
   )
 }

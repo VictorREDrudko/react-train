@@ -20,7 +20,7 @@ function App() {
       <TitlePage title={"Article №2"}/>
       <Rating value={valueRating} setValueRating={setValueRating}/>
       <Switch switching={on} setOn={setOn}/>
-      <UncontrolSwitch/>
+      <UncontrolSwitch onChange={setOn}/> {on.toString()}
       <UnControlAcc titleValue={"--UNCONTROLMENU-- #3"}/>
       <UncontrolRating/>
     </div>
