@@ -10,6 +10,7 @@ import { useState } from 'react';
 function App() {
   const [valueRating, setValueRating] = useState<ValueProps>(0);
   const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
+  const [on, setOn] = useState<boolean>(false);
 
 
   return (
@@ -18,8 +19,7 @@ function App() {
       <Accardion titleValue={"--MENU-- #1"} collapsed={isCollapsed} setIsCollapsed={()=>setIsCollapsed(!isCollapsed)}/>
       <TitlePage title={"Article №2"}/>
       <Rating value={valueRating} setValueRating={setValueRating}/>
-      <Switch switching={true}/>
-      <Switch switching={false}/>
+      <Switch switching={on} setOn={setOn}/>
       <UncontrolSwitch/>
       <UnControlAcc titleValue={"--UNCONTROLMENU-- #3"}/>
       <UncontrolRating/>
