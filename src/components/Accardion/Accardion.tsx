@@ -1,4 +1,4 @@
-type Accardionprops = {
+export type Accardionprops = {
   titleValue: string
   collapsed: boolean
   setIsCollapsed: ()=>void
@@ -18,13 +18,13 @@ type AccardionTitleProps = {
   onClick: ()=>void
 }
 
-function AccardionTitle(props: AccardionTitleProps) {
+export function AccardionTitle(props: AccardionTitleProps) {
   return (
     <h3 onClick={props.onClick}>{props.title}</h3>
   )
 }
 
-function AccardionBody() {
+export function AccardionBody() {
   return (
     <ul>
       <li>item 1</li>
