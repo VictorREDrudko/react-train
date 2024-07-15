@@ -1,14 +1,19 @@
-export type Accardionprops = {
+import { ItemsType } from "../../App"
+
+export type AccardionProps = {
   titleValue: string
   collapsed: boolean
   setIsCollapsed: ()=>void
+  items: ItemsType[]
+  onClick: (id: string) => void
 }
 
-function Accardion(props: Accardionprops) {
+
+function Accardion(props: AccardionProps) {
   return (
     <div>
       <AccardionTitle title={props.titleValue} onClick={props.setIsCollapsed}/>
-      {!props.collapsed && <AccardionBody/>}
+      {!props.collapsed && <AccardionBody items={props.items} onClick={props.onClick}/>}
     </div>
   )
 }
@@ -24,12 +29,19 @@ export function AccardionTitle(props: AccardionTitleProps) {
   )
 }
 
-export function AccardionBody() {
+
+
+
+// ******************************************* BODY
+type AccardionBodyType = {
+  items: ItemsType[]
+  onClick: (id: string) => void
+}
+
+export function AccardionBody(props: AccardionBodyType) {
   return (
     <ul>
-      <li>item 1</li>
-      <li>item 2</li>
-      <li>item 3</li>
+      {props.items.map(el => <li onClick={() => props.onClick(el.id)} key={el.id}>{el.nameUser}</li>)}
     </ul>
   )
 }

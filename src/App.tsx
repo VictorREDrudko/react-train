@@ -7,7 +7,27 @@ import { UnControlAcc } from './components/UncontrolAcc/UncontrolAcc';
 import { UncontrolRating } from './components/UncontrolRating/UncontrolRating';
 import { useState } from 'react';
 
+export type ItemsType = {
+  id: string,
+  nameUser: string
+}
+
 function App() {
+  const items: ItemsType[] = [
+    {
+      id: "1",
+      nameUser: "Tom"
+    },
+    {
+      id: "2",
+      nameUser: "Bill"
+    },
+    {
+      id: "3",
+      nameUser: "Andry"
+    },
+  ]
+
   const [valueRating, setValueRating] = useState<ValueProps>(0);
   const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
   const [on, setOn] = useState<boolean>(false);
@@ -16,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <TitlePage title={"Article №1"}/>
-      <Accardion titleValue={"--MENU-- #1"} collapsed={isCollapsed} setIsCollapsed={()=>setIsCollapsed(!isCollapsed)}/>
+      <Accardion titleValue={"--MENU-- #1"} collapsed={isCollapsed} setIsCollapsed={()=>setIsCollapsed(!isCollapsed)} items={items} onClick={()=>{}}/>
       <TitlePage title={"Article №2"}/>
       <Rating value={valueRating} setValueRating={setValueRating}/>
       <Switch switching={on} setOn={setOn}/>
