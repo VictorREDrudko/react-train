@@ -16,8 +16,12 @@ const items1: ItemType[] = [
   {id: "4", title: "Grodno"} 
 ]
 
+// Тестирование компаненты Select с переданным в props value
 export const SelectWhithValue = ()=> {
+  // State выбранного значения select
   const [value, setValue] = useState("2");
+
+
   return (
     <div>
       <Select value={value} onChange={setValue} items={items1}/>
@@ -25,8 +29,11 @@ export const SelectWhithValue = ()=> {
   )
 }
 
+// Тестирование компаненты Select БЕЗ передачи в props value
 export const SelectWithoutValue = ()=> {
+  // State выбранного значения select
   const [value, setValue] = useState('');
+
   return (
     <div>
       <Select value={value} onChange={setValue} items={items1}/>
