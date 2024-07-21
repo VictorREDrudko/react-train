@@ -1,23 +1,24 @@
-import { useState } from "react"
+import { useReducer, useState } from "react"
+import { COLLAPSED, reducer } from "./reducer";
 
-type Accardionprops = {
+type AccardionType = {
   titleValue: string
 }
 
-export function UnControlAcc(props: Accardionprops) {
-  const [collapsed, setCollabsed] = useState(false);
-  
-  const onClickHandler = () => {
-    setCollabsed(!collapsed)
-  }
+export function UnControlAcc(props: AccardionType) {
+  let [state, dispatch] = useReducer(reducer, {collapsed: false});
 
-  return (
-    <div>
-      <AccardionTitle title={props.titleValue} onClickHandler={onClickHandler}/>
-      {collapsed ? <AccardionBody/> : ''}
-    </div>
-  )
-}
+    const onClickHandler = () => {
+      dispatch({type: COLLAPSED})
+    }
+
+    return (
+      <div>
+        <AccardionTitle title={props.titleValue} onClickHandler={onClickHandler}/>
+        {!state.collapsed && <AccardionBody/>}
+      </div>
+    )
+  }
 
 type AccardionTitleProps = {
   title: string
